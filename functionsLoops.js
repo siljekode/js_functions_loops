@@ -77,18 +77,19 @@ checkArray(console.log, threeFruits);
                              and so on...
 */
 
+
 //Answer
 function loopThrough(arr) {
-  for (let i = 0; i < arr.length; i++){
-    console.log(`${arr[i]} at index ${i}`);
-  }
+  arr.forEach((item, index) => {
+    console.log (`${item} is at index ${index}`);
+  });
 }
 
 loopThrough(fiveWords);
 loopThrough(threeFruits);
 
-//Notes: `` backticks for strings, else ${} won't work. 
-//Question: why [i] for the first part but only {i} for the second? Aren't all indexes in []?
+ //Notes: if (arr) is not defined elsewhere, replace with ["",] array.
+
 
 
 /* Exercise #5: In Exercise #4 your task was to iterate through an array and just display the results, in this task try to use an array method that will
@@ -103,18 +104,17 @@ loopThrough(threeFruits);
 const nums = [1, 2, 3, 4, 5];
 const nums2 = [4321, 43, 2, 897698, 321, 87];
 
-//Answer
-function tripleArrayValues(arr) {
- let triple = []
+
+//Answer with only loops. Couldn't figure out how to combine them.
+function tripleArrayValues(arr){
+let triple = []
  for(let i = 0; i < arr.length; i++){
   triple.push(arr[i]*3);
  };
- console.log(triple)
 }
+tripleArrayValues(nums);
 
-tripleArrayValues(nums2);
 
-//Notes: .push because you are pushing the value in an additional two times in order to multiply by 3.
 
 /* Excercise #6: Use a different array method that will return a new array based on some filter,
                  For example lets say we just want odd numbers from the nums array:
